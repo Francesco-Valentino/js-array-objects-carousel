@@ -24,11 +24,14 @@ const images = [
 
 const carouselElement = document.querySelector("div.carousel");
 
-
+let activeIndex = 0;
 
 images.forEach((element, index) => {
     carouselElement.innerHTML += `<div class='carouselItem'><img src="${images[index].image}" alt=""></div>`;
 });
 
-document.querySelectorAll("div.carouselItem")[0].classList.add("active");
+document.querySelectorAll("div.carouselItem")[activeIndex].classList.add("active");
 
+const prevButtonInput = document.getElementById("prevButton");
+
+const nextButtonInput = document.getElementById("nextButton");
