@@ -16,11 +16,11 @@ body{
 }
 
 .carouselItem{
-    height: 450px;
-    width: 600px;
+    height: 500px;
+    width: 700px;
     margin: 0 auto;
     margin-top: 2rem;
-    display: none;
+    display: none; 
 }
 
 .carouselItem.active{

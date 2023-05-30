@@ -24,5 +24,11 @@ const images = [
 
 const carouselElement = document.querySelector("div.carousel");
 
-carouselElement.innerHTML += "<div class='carouselItem'><img src="${images[0].image}" alt=""></div>";
+
+
+images.forEach((element, index) => {
+    carouselElement.innerHTML += `<div class='carouselItem'><img src="${images[index].image}" alt=""></div>`;
+});
+
+document.querySelectorAll("div.carouselItem")[0].classList.add("active");
 
