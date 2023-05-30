@@ -20,6 +20,11 @@ body{
     width: 600px;
     margin: 0 auto;
     margin-top: 2rem;
+    display: none;
+}
+
+.carouselItem.active{
+    display: block;
 }
 
 .carouselItem img{
