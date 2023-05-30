@@ -24,14 +24,50 @@ const images = [
 
 const carouselElement = document.querySelector("div.carousel");
 
-let activeIndex = 0;
+let activeIndex = 4;
 
 images.forEach((element, index) => {
-    carouselElement.innerHTML += `<div class='carouselItem'><img src="${images[index].image}" alt=""></div>`;
+    carouselElement.innerHTML += `<div class='carouselItem'><img src="${images[index].image}" alt=""></div> <h1>${images[index].title}</h1> <h2>${images[index].text}</h2>`;
 });
 
 document.querySelectorAll("div.carouselItem")[activeIndex].classList.add("active");
 
+document.querySelectorAll("h1")[activeIndex].classList.add("active");
+
+document.querySelectorAll("h2")[activeIndex].classList.add("active");
+
 const prevButtonInput = document.getElementById("prevButton");
 
+prevButtonInput.addEventListener("click", function(){
+    if(activeIndex == 0){
+        activeIndex = images.length - 1;
+    } else {
+        activeIndex = activeIndex - 1;
+    }
+    document.querySelector("div.carouselItem.active").classList.remove("active");
+    document.querySelectorAll("div.carouselItem")[activeIndex].classList.add("active");
+
+    document.querySelector("h1.active").classList.remove("active");
+    document.querySelectorAll("h1")[activeIndex].classList.add("active");
+
+    document.querySelector("h2.active").classList.remove("active");
+    document.querySelectorAll("h2")[activeIndex].classList.add("active");
+})
+
 const nextButtonInput = document.getElementById("nextButton");
+
+nextButtonInput.addEventListener("click", function(){
+    if(activeIndex == images.length - 1){
+        activeIndex = 0;
+    } else {
+        activeIndex = activeIndex + 1;
+    }
+    document.querySelector("div.carouselItem.active").classList.remove("active");
+    document.querySelectorAll("div.carouselItem")[activeIndex].classList.add("active");
+
+    document.querySelector("h1.active").classList.remove("active");
+    document.querySelectorAll("h1")[activeIndex].classList.add("active");
+
+    document.querySelector("h2.active").classList.remove("active");
+    document.querySelectorAll("h2")[activeIndex].classList.add("active");
+})
