@@ -9,7 +9,9 @@ body{
     background-color: cornflowerblue;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.carousel{
     position: relative;
 }
 
@@ -17,6 +19,7 @@ body{
     height: 450px;
     width: 600px;
     margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .carouselItem img{
@@ -24,3 +27,28 @@ body{
     height: 100%;
     object-fit: cover;
 }
+
+#prevButton,
+#nextButton{
+    color: white;
+    position: absolute;
+    font-size: 2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .1s linear;
+    cursor: pointer;
+}
+
+#prevButton:hover,
+#nextButton:hover{
+    font-size: 2.4rem;
+}
+
+#prevButton{
+    top: 1%;
+}
+
+#nextButton{
+    bottom: 1%;
+}
+
